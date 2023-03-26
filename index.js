@@ -14,7 +14,7 @@ app.use("/uploads", express.static('uploads'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const atls_url = "mongodb+srv://bhagyarekha72748:Rekha@cluster1.04pulm6.mongodb.net/?retryWrites=true&w=majority";
+const atls_url = process.env.MONGODB_URI;
 
 mongoose.connect(atls_url,{
     useNewUrlParser : true,
