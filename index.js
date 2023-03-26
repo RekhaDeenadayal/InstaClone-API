@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const atls_url = process.env.MONGODB_URI;
-
+console.log(atls_url);
 mongoose.connect(atls_url,{
     useNewUrlParser : true,
     useUnifiedTopology : true
