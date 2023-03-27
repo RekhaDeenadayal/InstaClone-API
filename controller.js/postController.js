@@ -1,18 +1,13 @@
 const Post = require("../models/post");
 
 module.exports.addPost = async (req, res) => {
-    console.log(req.body, req.file);
-
+    
     const name = req.body.name;
     const location = req.body.location;
     const likes = req.body.likes;
     const description = req.body.description;
     const date = req.body.date;
-    const imageURL = req.file.path;
-
-    if (!name || !location || !description || !imageURL) {
-        res.send({ status: 400, msg: "Bad Request" })
-    }
+    const imageURL = req.body.postImage;
 
     const post = new Post({
         name: name,
